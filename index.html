@@ -3,18 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>广西半宙律师事务所 | 专业守护 温暖同行</title>
+  <meta name="description" content="广西半宙律师事务所坐落于钦州开投大厦，由资深律师联合创办，专注刑事辩护、行政法务、建设工程、婚姻家事、企业法律顾问，秉持专业严谨，热心公益法律服务。">
+  <meta name="keywords" content="钦州律师,广西半宙律师事务所,刑事辩护,行政法务,法律顾问">
+  <!-- 外部资源 -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <!-- 配色优化：律所稳重深蓝 + 暖香槟金，高级不浮夸、温暖不冰冷 -->
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            primary: '#0F3460',
-            secondary: '#E6B325',
-            neutral: '#F8F9FA',
-            dark: '#1A1A2E'
+            primary: '#0F2B5B',
+            secondary: '#D4AF65',
+            neutral: '#F6F7F9',
+            dark: '#121A2C'
           },
           fontFamily: {
             sans: ['Inter', 'system-ui', 'sans-serif'],
@@ -26,159 +29,368 @@
   </script>
   <style type="text/tailwindcss">
     @layer utilities {
-      .content-auto { content-visibility: auto; }
-      .text-shadow { text-shadow: 0 2px 10px rgba(0,0,0,0.2); }
-      .card-hover { transition: all 0.3s ease; }
-      .card-hover:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(15,52,96,0.1); }
+      .content-auto {content-visibility: auto;}
+      .card-hover {transition: all 0.35s ease;}
+      .card-hover:hover {transform: translateY(-6px);box-shadow: 0 20px 40px rgba(15,43,91,0.12);}
+      .line-gold {width:70px;height:2px;background:#D4AF65;margin:16px auto;}
     }
   </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
-<body class="font-sans text-dark bg-white">
+<body class="font-sans text-dark bg-white antialiased">
+  <!-- 导航栏 -->
+  <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur shadow-sm">
+    <div class="container mx-auto px-5 md:px-8 py-3 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <span class="text-primary text-2xl font-serif font-bold">广西半宙律师事务所</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-9">
+        <a href="#home" class="text-dark hover:text-primary text-sm font-medium transition-colors">首页</a>
+        <a href="#about" class="text-dark hover:text-primary text-sm font-medium transition-colors">关于律所</a>
+        <a href="#service" class="text-dark hover:text-primary text-sm font-medium transition-colors">业务领域</a>
+        <a href="#team" class="text-dark hover:text-primary text-sm font-medium transition-colors">律师团队</a>
+        <a href="#cases" class="text-dark hover:text-primary text-sm font-medium transition-colors">经典案例</a>
+        <a href="#contact" class="bg-primary text-white px-5 py-2 rounded text-sm hover:bg-primary/90 transition-all">免费咨询</a>
+      </nav>
+      <button id="menuBtn" class="md:hidden text-xl text-dark">
+        <i class="fa fa-bars"></i>
+      </button>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden bg-white shadow-lg w-full">
+      <div class="px-5 py-4 flex flex-col gap-4">
+        <a href="#home" class="py-2">首页</a>
+        <a href="#about" class="py-2">关于律所</a>
+        <a href="#service" class="py-2">业务领域</a>
+        <a href="#team" class="py-2">律师团队</a>
+        <a href="#cases" class="py-2">经典案例</a>
+        <a href="#contact" class="py-2 bg-primary text-white text-center rounded">免费咨询</a>
+      </div>
+    </div>
+  </header>
 
-<!-- 导航 -->
-<header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 bg-white/90 backdrop-blur-sm shadow-sm">
-  <div class="container mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
-    <a href="#" class="flex items-center gap-2">
-      <span class="text-primary text-2xl font-serif font-bold">广西半宙律师事务所</span>
-    </a>
-    <nav class="hidden md:flex items-center gap-8">
-      <a href="#home" class="text-dark hover:text-primary font-medium transition-colors">首页</a>
-      <a href="#about" class="text-dark hover:text-primary font-medium transition-colors">关于我们</a>
-      <a href="#service" class="text-dark hover:text-primary font-medium transition-colors">业务领域</a>
-      <a href="#team" class="text-dark hover:text-primary font-medium transition-colors">律师团队</a>
-      <a href="#cases" class="text-dark hover:text-primary font-medium transition-colors">经典案例</a>
-      <a href="#contact" class="bg-primary text-white px-5 py-2 rounded hover:bg-primary/90 transition-colors">在线咨询</a>
-    </nav>
-    <button id="menuBtn" class="md:hidden text-dark text-xl">
-      <i class="fa fa-bars"></i>
-    </button>
-  </div>
-</header>
-
-<!-- 首页 -->
-<section id="home" class="pt-24 md:pt-32 pb-16 md:pb-24 bg-gradient-to-br from-primary/5 to-neutral min-h-screen flex items-center">
-  <div class="container mx-auto px-4 md:px-6">
-    <div class="grid md:grid-cols-2 gap-10 items-center">
-      <div class="order-2 md:order-1">
-        <h1 class="font-serif text-[clamp(2rem,5vw,3.5rem)] font-bold text-dark leading-tight mb-6">
-          专业守护 温暖同行<br><span class="text-primary">广西半宙律师事务所</span>
-        </h1>
-        <p class="text-gray-600 text-lg mb-8 leading-relaxed">
-          我们秉持“互融互信、相互成就、共创未来”的价值观，为您提供专业、个性的法律服务，做您身边值得信赖的军师型律师伙伴。
-        </p>
-        <div class="flex flex-wrap gap-4">
-          <a href="#contact" class="bg-primary text-white px-6 py-3 rounded-md font-medium hover:bg-primary/90 transition-colors">立即咨询</a>
-          <a href="#service" class="bg-white border border-primary text-primary px-6 py-3 rounded-md font-medium hover:bg-primary/5 transition-colors">了解业务</a>
+  <!-- 首页横幅 -->
+  <section id="home" class="pt-28 md:pt-36 pb-20 bg-gradient-to-br from-primary/5 to-neutral min-h-[85vh] flex items-center">
+    <div class="container mx-auto px-5 md:px-8">
+      <div class="grid md:grid-cols-2 gap-14 items-center">
+        <div class="order-2 md:order-1">
+          <h1 class="font-serif text-[clamp(2rem,5vw,3.4rem)] font-bold leading-tight text-dark">
+            以法为器 <span class="text-primary">守护公正</span><br/>
+            以心为本 温暖相伴
+          </h1>
+          <div class="line-gold mx-0"></div>
+          <p class="text-gray-600 text-base leading-relaxed mt-5">
+            广西半宙律师事务所，立足钦州、服务广西。秉持<strong>谦受益，满招损</strong>的态度，坚守<strong>水利万物而不争</strong>的初心，打造专业严谨、值得托付的军师型律师事务所。
+          </p>
+          <div class="flex flex-wrap gap-4 mt-8">
+            <a href="#contact" class="bg-primary text-white px-7 py-3 rounded hover:shadow-lg transition-all">立即咨询</a>
+            <a href="#about" class="border border-primary text-primary px-7 py-3 rounded hover:bg-primary/5 transition-all">了解律所</a>
+          </div>
+        </div>
+        <div class="order-1 md:order-2 relative">
+          <div class="rounded-xl overflow-hidden shadow-2xl">
+            <img src="https://picsum.photos/id/1068/820/620" alt="半宙律所办公环境" class="w-full">
+          </div>
+          <div class="absolute -bottom-6 -right-6 w-36 h-36 bg-secondary/20 rounded-full -z-10"></div>
+          <div class="absolute -top-6 -left-6 w-28 h-28 bg-primary/10 rounded-full -z-10"></div>
         </div>
       </div>
-      <div class="order-1 md:order-2 relative">
-        <div class="relative z-10 rounded-lg overflow-hidden shadow-xl">
-          <img src="https://picsum.photos/id/1068/800/600" alt="律所办公环境" class="w-full h-auto object-cover">
+    </div>
+  </section>
+
+  <!-- 关于律所 -->
+  <section id="about" class="py-20 bg-white">
+    <div class="container mx-auto px-5 md:px-8">
+      <div class="text-center mb-16">
+        <h2 class="font-serif text-3xl font-bold">关于半宙律所</h2>
+        <div class="line-gold"></div>
+        <p class="text-gray-500 max-w-2xl mx-auto">互融互信、相互成就、共创未来，打造可传承的本土精品律所</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-14 items-center">
+        <div>
+          <img src="https://picsum.photos/id/1070/800/520" alt="律所团队风貌" class="rounded-xl shadow-lg w-full">
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold text-primary mb-4">用法律温度，承载每一份信赖</h3>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4">
+            广西半宙律师事务所由资深南宁律师与原国资所精英律师联合创办，创始合伙人理念一致、协作紧密，坚持诚信执业、团队办案，打造互融互信、专业严谨的法律服务平台。
+          </p>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4">
+            律所长期为政府、企事业单位、个人提供常年法律顾问及专项法律服务，适配多元化法律需求，提供私人定制化诉讼与非诉法律方案，深耕本土、服务本土，打造军师型法律服务机构。
+          </p>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4">
+            <strong class="text-primary">★ 公益普法 · 媒体发声</strong><br/>
+            律所多次受邀接受广西电视台、南宁电视台、钦州电视台媒体采访，普及法律常识、解答群众法律疑惑，荣获2020-2025年度“广西律师·公益行”广西律师行业优秀案例。
+          </p>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4">
+            <strong class="text-primary">★ 深耕学习 · 多元发展</strong><br/>
+            团队持续关注国家政策、社会热点，积极开展家庭教育、心理调解、基层矛盾化解等公益巡讲与社会培训，拓宽法律服务边界。
+          </p>
+          <p class="text-dark font-medium text-sm leading-relaxed mt-6">
+            半宙律所始终怀着“谦受益，满招损”的自省态度，坚守“水利万物而不争”的执业初心，以金子般的专业价值拓宽法律边界，致力于打造一家可以长久传承、受人尊重的本土品牌律所。
+          </p>
+          <div class="grid grid-cols-3 gap-4 mt-8">
+            <div class="text-center border border-primary/10 rounded-lg py-4">
+              <p class="text-xl font-bold text-primary">互融互信</p>
+              <p class="text-xs text-gray-500 mt-1">核心价值观</p>
+            </div>
+            <div class="text-center border border-primary/10 rounded-lg py-4">
+              <p class="text-xl font-bold text-primary">专业个性</p>
+              <p class="text-xs text-gray-500 mt-1">服务使命</p>
+            </div>
+            <div class="text-center border border-primary/10 rounded-lg py-4">
+              <p class="text-xl font-bold text-primary">军师律所</p>
+              <p class="text-xs text-gray-500 mt-1">律所定位</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- 关于我们 -->
-<section id="about" class="py-16 md:py-24 bg-white">
-  <div class="container mx-auto px-4 md:px-6">
-    <div class="text-center mb-12">
-      <h2 class="font-serif text-3xl md:text-4xl font-bold mb-4">关于广西半宙律师事务所</h2>
-      <div class="w-20 h-1 bg-secondary mx-auto mb-6"></div>
-    </div>
-    <div class="grid md:grid-cols-2 gap-12 items-center">
-      <div>
-        <img src="https://picsum.photos/id/1070/800/500" alt="律所团队" class="rounded-lg shadow-lg w-full h-auto">
+  <!-- 业务领域 -->
+  <section id="service" class="py-20 bg-neutral">
+    <div class="container mx-auto px-5 md:px-8">
+      <div class="text-center mb-16">
+        <h2 class="font-serif text-3xl font-bold">业务领域</h2>
+        <div class="line-gold"></div>
+        <p class="text-gray-500">精准深耕六大法律板块，为政府、企业、个人提供一站式法律服务</p>
       </div>
-      <div>
-        <p class="text-gray-600 mb-4 leading-relaxed">广西半宙律师事务所由卓富法务经验的南宁律师和原国资所精英律师强强联手打造。</p>
-        <p class="text-gray-600 mb-4 leading-relaxed">我们坚持专业严谨的理念，长期为政府、企业和个人提供优质法律顾问服务。</p>
-        <p class="text-gray-600 mb-4 leading-relaxed">★ 积极参与社会公益，多次接受电视台采访，荣获行业优秀公益案例。</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
+        <div class="bg-white p-8 rounded-xl shadow card-hover">
+          <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xl"><i class="fa fa-gavel"></i></div>
+          <h4 class="mt-5 text-lg font-semibold">刑事辩护</h4>
+          <p class="text-sm text-gray-600 mt-3">刑事案件会见、取保候审、无罪辩护、罪轻辩护、庭审辩护，最大限度维护当事人合法权益。</p>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow card-hover">
+          <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xl"><i class="fa fa-balance-scale"></i></div>
+          <h4 class="mt-5 text-lg font-semibold">民商事诉讼</h4>
+          <p class="text-sm text-gray-600 mt-3">合同纠纷、债权债务、股权纠纷、劳动工伤、侵权赔偿，高效处理各类民商事争议。</p>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow card-hover">
+          <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xl"><i class="fa fa-building"></i></div>
+          <h4 class="mt-5 text-lg font-semibold">企业法律顾问</h4>
+          <p class="text-sm text-gray-600 mt-3">企业合规审查、合同审核、风险防控、股权架构、常年法律顾问服务。</p>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow card-hover">
+          <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xl"><i class="fa fa-heart"></i></div>
+          <h4 class="mt-5 text-lg font-semibold">婚姻家事纠纷</h4>
+          <p class="text-sm text-gray-600 mt-3">离婚诉讼、财产分割、抚养权、继承纠纷、家庭矛盾调解，温柔审慎处理家事案件。</p>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow card-hover">
+          <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xl"><i class="fa fa-flag"></i></div>
+          <h4 class="mt-5 text-lg font-semibold">行政法律事务</h4>
+          <p class="text-sm text-gray-600 mt-3">行政复议、行政诉讼、政府合规审查、行政执法优化、群体性纠纷处理。</p>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow card-hover">
+          <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xl"><i class="fa fa-handshake-o"></i></div>
+          <h4 class="mt-5 text-lg font-semibold">私人定制法务</h4>
+          <p class="text-sm text-gray-600 mt-3">针对政企、个人量身定制法律方案，专项风控、谈判、尽调、非诉专项服务。</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- 业务领域 -->
-<section id="service" class="py-16 md:py-24 bg-neutral">
-  <div class="container mx-auto px-4 md:px-6">
-    <div class="text-center mb-12">
-      <h2 class="font-serif text-3xl md:text-4xl font-bold mb-4">业务领域</h2>
-      <div class="w-20 h-1 bg-secondary mx-auto mb-6"></div>
+  <!-- 律师团队 -->
+  <section id="team" class="py-20 bg-white">
+    <div class="container mx-auto px-5 md:px-8">
+      <div class="text-center mb-16">
+        <h2 class="font-serif text-3xl font-bold">创始合伙人团队</h2>
+        <div class="line-gold"></div>
+        <p class="text-gray-500">专业深耕、各司所长，用经验与严谨守护每一起案件</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- 廖莉律师 -->
+        <div class="bg-white rounded-xl shadow overflow-hidden card-hover">
+          <img src="https://picsum.photos/id/1000/420/520" alt="廖莉律师" class="w-full h-72 object-cover">
+          <div class="p-6">
+            <h4 class="text-lg font-semibold text-center">廖莉 律师</h4>
+            <p class="text-secondary text-sm text-center mt-1">创始合伙人｜钦州市优秀律师</p>
+            <div class="mt-4 text-sm text-gray-600 leading-relaxed">
+              <p>广西律协民事、青工委优秀委员；广西电视台、南宁电视台特邀法律嘉宾；中南民族大学法学院职业导师；市检察院人民监督员、婚姻家庭调解专家库成员。</p>
+              <p class="mt-2"><strong>擅长：</strong>刑事辩护、债权债务、合同股权、婚姻家事、劳动工伤、交通事故、常年法律顾问。</p>
+            </div>
+          </div>
+        </div>
+        <!-- 冯永富律师 -->
+        <div class="bg-white rounded-xl shadow overflow-hidden card-hover">
+          <img src="https://picsum.photos/id/1005/420/520" alt="冯永富律师" class="w-full h-72 object-cover">
+          <div class="p-6">
+            <h4 class="text-lg font-semibold text-center">冯永富 律师</h4>
+            <p class="text-secondary text-sm text-center mt-1">创始合伙人｜资深政府法务律师</p>
+            <div class="mt-4 text-sm text-gray-600 leading-relaxed">
+              <p>执业三十余年，钦州资深律师，长期服务各级行政机关，精通行政执法合规、行政复议、重大工程法律论证，擅长群体性纠纷化解。</p>
+              <p class="mt-2"><strong>擅长：</strong>行政法律、建设工程、政府法律顾问、群体性纠纷处理。</p>
+            </div>
+          </div>
+        </div>
+        <!-- 杨海英律师 -->
+        <div class="bg-white rounded-xl shadow overflow-hidden card-hover">
+          <img src="https://picsum.photos/id/1062/420/520" alt="杨海英律师" class="w-full h-72 object-cover">
+          <div class="p-6">
+            <h4 class="text-lg font-semibold text-center">杨海英 律师</h4>
+            <p class="text-secondary text-sm text-center mt-1">创始合伙人｜心理咨询师</p>
+            <div class="mt-4 text-sm text-gray-600 leading-relaxed">
+              <p>北大法学学士，法学会常务理事，家庭教育指导师，多家机关单位法律顾问，长期从事基层矛盾调解、法律培训授课。逻辑缜密、办案稳健。</p>
+              <p class="mt-2"><strong>擅长：</strong>建设工程、债权债务、刑事辩护、合同劳动、资产风控谈判。</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="bg-white rounded-lg p-8 shadow card-hover"><h4 class="font-serif text-xl font-semibold mb-3">刑事辩护</h4></div>
-      <div class="bg-white rounded-lg p-8 shadow card-hover"><h4 class="font-serif text-xl font-semibold mb-3">民商事诉讼</h4></div>
-      <div class="bg-white rounded-lg p-8 shadow card-hover"><h4 class="font-serif text-xl font-semibold mb-3">企业法律顾问</h4></div>
-      <div class="bg-white rounded-lg p-8 shadow card-hover"><h4 class="font-serif text-xl font-semibold mb-3">婚姻家事法律</h4></div>
-      <div class="bg-white rounded-lg p-8 shadow card-hover"><h4 class="font-serif text-xl font-semibold mb-3">行政法律事务</h4></div>
-      <div class="bg-white rounded-lg p-8 shadow card-hover"><h4 class="font-serif text-xl font-semibold mb-3">特色私人订制</h4></div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- 律师团队 -->
-<section id="team" class="py-16 md:py-24 bg-white">
-  <div class="container mx-auto px-4 md:px-6">
-    <div class="text-center mb-12">
-      <h2 class="font-serif text-3xl md:text-4xl font-bold mb-4">精英律师团队</h2>
-      <div class="w-20 h-1 bg-secondary mx-auto mb-6"></div>
+  <!-- 经典案例 -->
+  <section id="cases" class="py-20 bg-neutral">
+    <div class="container mx-auto px-5 md:px-8">
+      <div class="text-center mb-16">
+        <h2 class="font-serif text-3xl font-bold">经典成功案例</h2>
+        <div class="line-gold"></div>
+        <p class="text-gray-500">真实办案、专业落地，以实战结果彰显律师实力</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
+        <div class="bg-white rounded-xl overflow-hidden shadow card-hover">
+          <img src="https://picsum.photos/id/1071/800/420" alt="刑事辩护案例" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded">刑事辩护</span>
+            <h4 class="font-semibold mt-3">重大刑事案件有效辩护</h4>
+            <p class="text-sm text-gray-600 mt-2">廖莉律师团队办理多起重大刑事案件，通过细致阅卷、庭审质证，成功为当事人争取从轻、减轻处罚，维护当事人合法权益。</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl overflow-hidden shadow card-hover">
+          <img src="https://picsum.photos/id/1076/800/420" alt="企业法务案例" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded">企业法务</span>
+            <h4 class="font-semibold mt-3">企业合同纠纷回款胜诉</h4>
+            <p class="text-sm text-gray-600 mt-2">杨海英律师处理多起企业大额合同欠款纠纷，证据梳理严密，谈判诉讼并行，成功为企业追回大额款项，规避经营风险。</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl overflow-hidden shadow card-hover">
+          <img src="https://picsum.photos/id/1073/800/420" alt="行政法务案例" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded">行政法务</span>
+            <h4 class="font-semibold mt-3">行政争议合规维权案件</h4>
+            <p class="text-sm text-gray-600 mt-2">冯永富律师依托多年行政法务经验，处理多起行政复议、行政诉讼案件，帮助当事人、行政相对人合法维权，化解行政矛盾。</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="rounded-lg overflow-hidden shadow card-hover bg-white">
-        <img src="https://picsum.photos/id/1000/400/500" alt="廖莉律师" class="w-full h-80 object-cover">
-        <div class="p-5 text-center"><h4 class="font-serif text-lg font-semibold">廖莉 律师</h4></div>
-      </div>
-      <div class="rounded-lg overflow-hidden shadow card-hover bg-white">
-        <img src="https://picsum.photos/id/1005/400/500" alt="冯永富律师" class="w-full h-80 object-cover">
-        <div class="p-5 text-center"><h4 class="font-serif text-lg font-semibold">冯永富 律师</h4></div>
-      </div>
-      <div class="rounded-lg overflow-hidden shadow card-hover bg-white">
-        <img src="https://picsum.photos/id/1062/400/500" alt="杨海英律师" class="w-full h-80 object-cover">
-        <div class="p-5 text-center"><h4 class="font-serif text-lg font-semibold">杨海英 律师</h4></div>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- 联系我们 -->
-<section id="contact" class="py-16 md:py-24 bg-primary text-white">
-  <div class="container mx-auto px-4 md:px-6">
-    <div class="text-center mb-12">
-      <h2 class="font-serif text-3xl md:text-4xl font-bold mb-4">联系我们</h2>
-      <div class="w-20 h-1 bg-white mx-auto mb-6"></div>
-    </div>
-    <div class="grid md:grid-cols-2 gap-12">
-      <div class="space-y-6 text-lg">
-        <p><i class="fa fa-map-marker mr-2"></i> 广西钦州市扬帆大道35号开投大厦12楼</p>
-        <p><i class="fa fa-phone mr-2"></i> 0777-2856888 / 15777188279</p>
-        <p><i class="fa fa-envelope mr-2"></i> banzhoulvsuo@163.com</p>
+  <!-- 联系我们 -->
+  <section id="contact" class="py-20 bg-primary text-white">
+    <div class="container mx-auto px-5 md:px-8">
+      <div class="text-center mb-16">
+        <h2 class="font-serif text-3xl font-bold">免费法律咨询</h2>
+        <div class="line-gold bg-white"></div>
+        <p class="text-white/70">无论案件大小，我们耐心倾听、专业解答，为您定制法律方案</p>
       </div>
-      <div class="bg-white text-dark p-8 rounded-lg">
-        <h3 class="text-xl font-bold mb-4">在线留言</h3>
-        <input class="w-full p-3 border rounded mb-3" placeholder="您的姓名">
-        <input class="w-full p-3 border rounded mb-3" placeholder="联系电话">
-        <textarea class="w-full p-3 border rounded mb-3" rows="4" placeholder="咨询内容"></textarea>
-        <button class="w-full bg-primary text-white p-3 rounded">提交咨询</button>
+      <div class="grid md:grid-cols-2 gap-12">
+        <div>
+          <h3 class="text-xl font-semibold mb-6">联系半宙律所</h3>
+          <div class="space-y-6">
+            <div class="flex items-start gap-5">
+              <div class="text-secondary text-xl mt-1"><i class="fa fa-map-marker"></i></div>
+              <div>
+                <h4 class="font-medium">律所地址</h4>
+                <p class="text-white/70 text-sm mt-1">广西钦州市扬帆大道35号开投大厦12楼</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-5">
+              <div class="text-secondary text-xl mt-1"><i class="fa fa-phone"></i></div>
+              <div>
+                <h4 class="font-medium">咨询电话</h4>
+                <p class="text-white/70 text-sm mt-1">0777-2856888｜15777188279</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-5">
+              <div class="text-secondary text-xl mt-1"><i class="fa fa-envelope"></i></div>
+              <div>
+                <h4 class="font-medium">官方邮箱</h4>
+                <p class="text-white/70 text-sm mt-1">banzhoulvsuo@163.com</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-5">
+              <div class="text-secondary text-xl mt-1"><i class="fa fa-clock-o"></i></div>
+              <div>
+                <h4 class="font-medium">办公时间</h4>
+                <p class="text-white/70 text-sm mt-1">周一至周五 09:00-18:00｜节假日可预约咨询</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl p-8 text-dark">
+          <h3 class="text-xl font-semibold text-primary mb-6">在线留言咨询</h3>
+          <form class="space-y-4 text-sm">
+            <div>
+              <label class="block mb-1">您的姓名</label>
+              <input type="text" class="w-full border border-gray-200 rounded px-4 py-3 focus:ring-2 focus:ring-primary/40 outline-none" placeholder="请输入姓名">
+            </div>
+            <div>
+              <label class="block mb-1">联系电话</label>
+              <input type="tel" class="w-full border border-gray-200 rounded px-4 py-3 focus:ring-2 focus:ring-primary/40 outline-none" placeholder="请输入手机号码">
+            </div>
+            <div>
+              <label class="block mb-1">咨询类型</label>
+              <select class="w-full border border-gray-200 rounded px-4 py-3 focus:ring-2 focus:ring-primary/40 outline-none">
+                <option>刑事辩护</option>
+                <option>民商事纠纷</option>
+                <option>企业法律顾问</option>
+                <option>婚姻家事</option>
+                <option>行政法律事务</option>
+                <option>其他法律问题</option>
+              </select>
+            </div>
+            <div>
+              <label class="block mb-1">咨询详情</label>
+              <textarea rows="4" class="w-full border border-gray-200 rounded px-4 py-3 focus:ring-2 focus:ring-primary/40 outline-none" placeholder="简要描述您的法律问题"></textarea>
+            </div>
+            <button type="submit" class="w-full bg-primary text-white py-3 rounded hover:shadow-lg transition-all">提交咨询 · 免费回复</button>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- 页脚 -->
-<footer class="bg-dark text-white py-10 text-center">
-  <p class="font-serif text-xl mb-4">广西半宙律师事务所</p>
-  <p class="opacity-50 text-sm">© 2025 广西半宙律师事务所 版权所有</p>
-</footer>
+  <!-- 页脚 -->
+  <footer class="bg-dark text-white py-12">
+    <div class="container mx-auto px-5 md:px-8 text-center">
+      <h3 class="font-serif text-xl">广西半宙律师事务所</h3>
+      <p class="text-white/60 text-sm mt-3 max-w-xl mx-auto">谦受益，满招损｜水利万物而不争<br/>以金子般的专业价值，拓宽法律宇宙边界</p>
+      <div class="w-16 h-px bg-white/20 mx-auto my-6"></div>
+      <p class="text-white/40 text-xs">© 2025 广西半宙律师事务所 版权所有 | 本网站仅供展示，法律咨询以线下沟通为准</p>
+    </div>
+  </footer>
 
-<script>
-  const menuBtn = document.getElementById('menuBtn');
-  menuBtn.addEventListener('click', () => {
-    const icon = menuBtn.querySelector('i');
-    icon.classList.toggle('fa-bars');
-    icon.classList.toggle('fa-times');
-  });
-</script>
+  <!-- JS交互 -->
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click',()=>{
+      mobileMenu.classList.toggle('hidden');
+      const i = menuBtn.querySelector('i');
+      i.classList.toggle('fa-bars');
+      i.classList.toggle('fa-times');
+    });
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll',()=>{
+      if(window.scrollY>60) navbar.classList.add('shadow-md');
+      else navbar.classList.remove('shadow-md');
+    });
+    document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+      anchor.addEventListener('click',function(e){
+        e.preventDefault();
+        const t = document.querySelector(this.getAttribute('href'));
+        if(t){
+          window.scrollTo({top:t.offsetTop-85,behavior:'smooth'});
+          mobileMenu.classList.add('hidden');
+          const i = menuBtn.querySelector('i');
+          i.classList.remove('fa-times');
+          i.classList.add('fa-bars');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
